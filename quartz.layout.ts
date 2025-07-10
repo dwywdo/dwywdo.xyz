@@ -5,23 +5,7 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [
-    Component.Comments({
-      provider: 'giscus',
-      options: {
-        // from data-repo
-        repo: 'dwywdo/blog.dwywdo.dev',
-        // from data-repo-id
-        repoId: 'R_kgDOPJjWjw',
-        // from data-category
-        category: 'Announcements',
-        // from data-category-id
-        categoryId: 'DIC_kwDOPJjWj84Cstsh',
-        // from data-lang
-        lang: 'en'
-      }
-    }),
-  ],
+  afterBody: [],
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/jackyzha0/quartz",
@@ -41,6 +25,23 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ContentMeta(),
     Component.TagList(),
   ],
+  afterBody: [
+    Component.Comments({
+      provider: 'giscus',
+      options: {
+        // from data-repo
+        repo: 'dwywdo/blog.dwywdo.dev',
+        // from data-repo-id
+        repoId: 'R_kgDOPJjWjw',
+        // from data-category
+        category: 'Announcements',
+        // from data-category-id
+        categoryId: 'DIC_kwDOPJjWj84Cstsh',
+        // from data-lang
+        lang: 'en'
+      }
+    }),
+  ],
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
@@ -54,7 +55,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.RecentNotes({ title: "Recent Writings", limit: 4, linkToMore: "/posts"}),
   ],
   right: [
     Component.Graph(),
@@ -78,7 +79,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.RecentNotes({ title: "Recent Writings", limit: 1, linkToMore: "/posts"}),
   ],
   right: [],
 }

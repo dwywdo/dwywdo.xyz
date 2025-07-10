@@ -18,7 +18,7 @@ date: 2025-07-09
 
 Obsidian offers a service called [Obsidian Publish](https://obsidian.md/publish), allowing users to publish the contents of their Vaults. While it enables you to create a personal blog or a knowledge base website seamlessly with minimal effort, some users have commented it for being slow and for requiring a subscription fee. This has led me to explore alternative solutions.
 
-Finally, I discovered the existence of a tool called [Quartz](https://quartz.jzhao.xyz/) through [a YouTube video](https://www.youtube.com/watch?v=6s6DT1yN4dw). The video explained how to use Obsidian in conjunction with GitHub Pages to build a personal blog. I immediately gave it a try, and the results were satisfying.
+Finally, I discovered the existence of a tool called [Quartz](https://quartz.jzhao.xyz/) through [a YouTube video](https://www.youtube.com/watch?v=6s6DT1yN4dw). The video explains how to use Obsidian in conjunction with GitHub Pages to build a personal blog. I immediately gave it a try, and the results were satisfying.
 
 This post illustrates how to configure your own publishing platform with
 
@@ -28,7 +28,7 @@ This post illustrates how to configure your own publishing platform with
 
 ## How it works?
 To create a website, it's necessary to generate static resources that can be rendered by a browser. How does my markdown notes turn into the static resources? 
-![[howitworks.png]]
+![[content/posts/howitworks.png]]
 **Quartz** converts Markdown notes created in **Obsidian** into these static resources, while **GitHub Pages** hosts these resources, eliminating the need for individuals to set up their own servers.
 ## How to configure Obsidian + Quartz + Github Pages
 For the most up-to-update manual, please refer to [this link](https://quartz.jzhao.xyz/#-get-started) and [this Youtube video](https://www.youtube.com/watch?v=6s6DT1yN4dw)
@@ -112,14 +112,14 @@ npx quartz sync --no-pull
 
 You'll be able to see the content of the quartz directory in your repository
 
-![[synccontent.png]]
+![[content/posts/synccontent.png]]
 
 ### 5. Host with Github Pages using Github Actions
 You can refer [here](https://quartz.jzhao.xyz/hosting#github-pages) to get the content of `deploy.yml` and detailed instructions
 
 1. Create a `deploy.yml` file in `quartz/.github/workflows/deploy.yml`
 2. Configure Github Actions
-	![[githubaction.png]]
+	![[content/posts/githubaction.png]]
 3. Commit these changes by doing `npx quartz sync`
 
 ## Basic Commands
