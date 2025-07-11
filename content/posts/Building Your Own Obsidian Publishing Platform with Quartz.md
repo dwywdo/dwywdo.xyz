@@ -2,7 +2,7 @@
 title: Building Your Own Obsidian Publishing Platform with Quartz
 description: 
 draft: false
-tags: 
+tags: []
 aliases: 
 permalink: 
 date: 2025-07-09
@@ -29,7 +29,7 @@ This post illustrates how to configure your own publishing platform with
 ## How it works?
 To create a website, it's necessary to generate static resources that can be rendered by a browser. How does my markdown notes turn into the static resources? 
 
-![[howitworks.png]]
+![[posts/attachments/howitworks.png]]
 
 In short, **Quartz** converts Markdown notes created in **Obsidian** into these static resources, while **GitHub Pages** hosts these resources, eliminating the need for individuals to set up their own servers.
 ## How to configure Obsidian + Quartz + Github Pages
@@ -114,14 +114,14 @@ npx quartz sync --no-pull
 
 You'll be able to see the content of the quartz directory in your repository
 
-![[synccontent.png]]
+![[posts/attachments/synccontent.png]]
 
 ### 5. Host with Github Pages using Github Actions
 You can refer [here](https://quartz.jzhao.xyz/hosting#github-pages) to get the content of `deploy.yml` and detailed instructions
 
 1. Create a `deploy.yml` file in `quartz/.github/workflows/deploy.yml`
 2. Configure Github Actions
-	![[githubaction.png]]
+	![[posts/attachments/githubaction.png]]
 3. Commit these changes by doing `npx quartz sync`
 
 ## Basic Commands

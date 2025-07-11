@@ -1,5 +1,6 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import { QuartzPluginData } from "./quartz/plugins/vfile"
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -14,13 +15,18 @@ export const sharedPageComponents: SharedLayout = {
   }),
 }
 
+let postFilter = function(f: QuartzPluginData): boolean {
+  return f.filePath?.includes("posts") && !f.filePath?.endsWith("index.md") 
+}
+
+
+let fleetingFilter = function(f: QuartzPluginData): boolean {
+  return f.filePath?.includes("fleetings") && !f.filePath?.endsWith("index.md") 
+}
+
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    Component.ConditionalRender({
-      component: Component.Breadcrumbs(),
-      condition: (page) => page.fileData.slug !== "index",
-    }),
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
@@ -55,7 +61,8 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.RecentNotes({ title: "Recent Writings", limit: 4, linkToMore: "/posts"}),
+    Component.RecentNotes({ title: "Recent Posts", limit: 4, linkToMore: "/posts", filter: postFilter}),
+    Component.RecentNotes({ title: "Recent Fleetings", limit: 4, linkToMore: "/fleetings", filter: fleetingFilter}),
   ],
   right: [
     Component.Graph(),
@@ -66,7 +73,7 @@ export const defaultContentPageLayout: PageLayout = {
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
+  beforeBody: [Component.ArticleTitle(), Component.ContentMeta()],
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
@@ -79,7 +86,8 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.RecentNotes({ title: "Recent Writings", limit: 1, linkToMore: "/posts"}),
+    Component.RecentNotes({ title: "Recent Posts", limit: 4, linkToMore: "/posts", filter: postFilter}),
+    Component.RecentNotes({ title: "Recent Fleetings", limit: 4, linkToMore: "/fleetings", filter: fleetingFilter}),
   ],
   right: [],
 }
