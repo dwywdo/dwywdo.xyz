@@ -36,6 +36,8 @@ date: 2025-07-11
 
 > I want my digital garden to be a playground for new ways ideas can connect together. As a result, existing formal organizing systems like Zettelkasten or the hierarchical folder structures of Notion don’t work well for me. There is way too much upfront friction that by the time I’ve thought about how to organize my thought into folders categories, I’ve lost it. — [Jacky Zhao](https://jzhao.xyz/posts/networked-thought#what-is-digital-gardening)
 
-첫 포스트가 Quartz의 초기 구성과 관련한 내용이었던 것 만큼, 글 작성에 방해가 될 수 있는 요소들을 이 웹사이트에서 지워나가고 심리적으로 완전히 자유롭게 글을 작성할 수 있는 공간이 되도록 Quartz를 구성해나가는 과정을 글로 남겨보면 재밌겠다는 생각이 들었다. 시스템을 구조화하는데에 시간을 쏟는 것이 아니라, 의도되지 않은 기본값으로서의 구조를 없애는 과정이 될 것이다. 공부하기 전 괜히 방 정리가 하고 싶었던 기억이 떠오른다면 그게 맞다. 다만 그 과정을 표현하고 공유해서 생산적인 일로 환원하고자 하는 의도가 크다.
+첫 포스트가 Quartz의 초기 구성과 관련한 내용이었던 것 만큼, 글 작성에 방해가 될 수 있는 요소들을 이 웹사이트에서 지워나가고 심리적으로 완전히 자유롭게 글을 작성할 수 있는 공간이 되도록 Quartz를 구성해나가는 과정을 글로 남겨보면 재밌겠다는 생각이 들었다. 
+
+시스템을 구조화하는데에 시간을 쏟는 것이 아니라, 의도되지 않은 기본값으로서의 구조를 없애는 과정이 될 것이다. 공부하기 전 괜히 방 정리가 하고 싶었던 기억이 떠오른다면 그게 맞다. 다만 그 과정을 표현하고 공유해서 생산적인 일로 환원하고자 하는 시도라는 점이 과거의 [[Procrastination]]과는 다른 점이라고 생각한다.
 
 Quartz에 대한 설정을 변경할 때마다 작성하고자 하며, 해당 포스트들은 #series/tidy-up 태그가 붙을 예정이다. 이 글의 제목이 Tidy Up Before Type Up인 이유를 설명하는데에 참 오래도 걸렸다 (...) 쓰다보면 글 쓰는 속도도 빨라지겠지... 끝맺음하는 법도 알게되겠지...
