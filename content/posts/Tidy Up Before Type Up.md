@@ -10,7 +10,7 @@ date: 2025-07-11
 ---
 첫번째 포스트인 [[Building Your Own Obsidian Publishing Platform with Quartz]]는 내가 그나마 편하게 느끼는 도구인 Obsidian을 기반으로 한 웹사이트를 어떻게 구축하는지의 내용을 정리하는 것에 초점을 맞추고 있다. 이제 마침내 글을 쓸 수 있는 공간이 생겼으니, 남는 건 실제로 글을 쓰는 일 뿐이다! 그런데... 내가 원래 어떤 글을 쓰려고 했었더라?
 
-처음 이 웹사이트를 만들기 시작했을 때, 나는 무의식적으로 이곳을 내가 배운 것들(TIL)을 정리하고, 그 지식들을 서로 연결하는 공간—일종의 [PKM](https://en.wikipedia.org/wiki/Personal_knowledge_management) 시스템이나 "[Second Brain](https://www.buildingasecondbrain.com/)"—으로 상상했다. 하지만 [Quartz](https://quartz.jzhao.xyz/)에 대해 더 알아가면서, 이 정적 사이트 생성기를 만든 개발자 [Jacky Zhao](https://jzhao.xyz/posts/networked-thought#what-is-digital-gardening)가 제시한 디지털 정원이라는 개념을 접하게 되었고, 그의 디지털 정원에 대한 접근 방식을 알게 되면서 나는 이 웹사이트의 방향성에 대해 재고하게 되었다.
+처음 이 웹사이트를 만들기 시작했을 때, 나는 무의식적으로 이곳을 내가 배운 것들(TIL)을 정리하고, 그 지식들을 서로 연결하는 공간—일종의 [PKM](https://en.wikipedia.org/wiki/Personal_knowledge_management) 시스템이나 "[Second Brain](https://www.buildingasecondbrain.com/)"—으로 상상했다. 하지만 [Quartz](https://quartz.jzhao.xyz/)에 대해 더 알아가면서, 이 정적 사이트 생성기를 만든 개발자 [Jacky Zhao](https://jzhao.xyz/posts/networked-thought#what-is-digital-gardening)가 소개한 디지털 정원이라는 개념을 접하게 되었고, 그의 디지털 정원에 대한 접근 방식을 알게 되면서 나는 이 웹사이트의 방향성에 대해 재고하게 되었다.
 
 > Digital gardens focus not on being a definite source of truth, but rather a source which is constantly evolving as your own knowledge grows and changes — [Jacky Zhao](https://jzhao.xyz/posts/networked-thought#how-i-garden)
 
@@ -32,10 +32,10 @@ date: 2025-07-11
 
 아무튼 그렇게 Jacky의 디지털 정원을 본따 Quartz의 레이아웃 / 구성 등을 변경하던 중 흥미로운 점을 발견했다.
 
-보통 어떤 노트나 메모를 작성할 때 어떤 특정 폴더의 어떤 형식으로 넣을지 고민하게 되는데, 이 디지털 정원에는 그러한 선형적/계층적인 (이를테면 폴더와 같은) 구조가 아예 없었다.
+보통 어떤 노트나 메모를 작성할 때 어떤 특정 폴더의 어떤 형식으로 넣을지 고민하게 되는데, 이 디지털 정원에는 그러한 선형적/계층적인 (이를테면 폴더와 같은) 구조가 없었다.
 
 > I want my digital garden to be a playground for new ways ideas can connect together. As a result, existing formal organizing systems like Zettelkasten or the hierarchical folder structures of Notion don’t work well for me. There is way too much upfront friction that by the time I’ve thought about how to organize my thought into folders categories, I’ve lost it. — [Jacky Zhao](https://jzhao.xyz/posts/networked-thought#what-is-digital-gardening)
 
-첫 포스트가 Quartz의 초기 구성과 관련한 내용이었던 것 만큼, 글 작성에 방해가 될 수 있는 요소들을 이 웹사이트에서 지워나가고 심리적으로 완전히 자유롭게 글을 작성할 수 있는 공간이 되도록 Quartz를 구성해나가는 과정을 글로 남겨보면 재밌겠다는 생각이 들었다.
+첫 포스트가 Quartz의 초기 구성과 관련한 내용이었던 것 만큼, 글 작성에 방해가 될 수 있는 요소들을 이 웹사이트에서 지워나가고 심리적으로 완전히 자유롭게 글을 작성할 수 있는 공간이 되도록 Quartz를 구성해나가는 과정을 글로 남겨보면 재밌겠다는 생각이 들었다. 시스템을 구조화하는데에 시간을 쏟는 것이 아니라, 의도되지 않은 기본값으로서의 구조를 없애는 과정이 될 것이다.
 
 Quartz에 대한 설정을 변경할 때마다 작성하고자 하며, 해당 포스트들은 #series/tidy-up 태그가 붙을 예정이다. 이 글의 제목이 Tidy Up Before Type Up인 이유를 설명하는데에 참 오래도 걸렸다 (...) 쓰다보면 글 쓰는 속도도 빨라지겠지... 끝맺음하는 법도 알게되겠지...
