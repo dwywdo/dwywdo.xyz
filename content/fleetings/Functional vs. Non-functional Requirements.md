@@ -4,7 +4,6 @@ description:
 draft: false
 tags:
   - concept
-  - note
 aliases: 
 permalink: 
 date: 2025-07-13

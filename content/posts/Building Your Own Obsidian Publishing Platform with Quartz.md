@@ -2,7 +2,8 @@
 title: Building Your Own Obsidian Publishing Platform with Quartz
 description: 
 draft: false
-tags: []
+tags:
+  - tech
 aliases: 
 permalink: 
 date: 2025-07-09
