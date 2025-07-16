@@ -35,7 +35,8 @@ tags:
 
 **p.287** "오늘날 시스템의 규모와 배포 속도를 따라잡으려면 모든 엔지니어가 테스트도 함께 개발해야  만합니다."
 
- 
+
+
 > [!COMMENT]- What if the release cycle is long enough?
 > - Does it mean that QA can play a role of all validation process?
 > - What else could we think of as advantages of automated test written by developers?
@@ -46,7 +47,8 @@ tags:
 
 **p.288** "테스트가 실패하면 바로  바로 조치하도록 권장해야 테스트 프로세스를 신뢰하고 계속 이어갈 수 있습니다."
 
- 
+
+
 > [!COMMENT]- Flacky Test
 > - If there are many flaky tests in your test suite, it discourages your teammates from taking an action to test failure right away, assuming that it'll be resolved soon...
 
