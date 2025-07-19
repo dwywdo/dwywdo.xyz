@@ -10,6 +10,9 @@ date: 2025-07-14
 ---
 A [changelog](https://en.wikipedia.org/wiki/Changelog) for posts with #series/tidy-up
 
+2025-07-19
+- Integrate Quartz directory with Obsidian's [Note Toolbar](https://github.com/chrisgurney/obsidian-note-toolbar?tab=readme-ov-file#features)
+
 2025-07-12
 - Change pageTitle
 - Add `RecentNote` sections for Posts / Fleeting Notes
