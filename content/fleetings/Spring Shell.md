@@ -17,9 +17,8 @@ As of 3.4.0, it provides advanced features such as
 - Tab Completion
 - UI/UX on CLI (Such as colorization, ASCII-art, ...)
 
-
 Let's say you want to write an interactive CLI application with Spring Shell. 
-Just like other spring projects, you could easily initialized the project for Spring Shell, using [Spring Initializer](https://start.spring.io/).
+Just like other spring projects, you could easily initialize the project for Spring Shell, using [Spring Initializer](https://start.spring.io/).
 
 You can define a class, `Commands` that holds your own commands with a `@ShellComponent` annotation.
 
