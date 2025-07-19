@@ -59,3 +59,13 @@ Hello World! Boot
 ```
 
 You can also provide an argument for the command with a `--arg` option (value=`Boot`)
+
+---
+> [!QUOTE]- Note
+> I'm trying to write a program like a bot that automates replying, and visiting followers on a blog platform.
+> Before I get caught up in frontend things, I'd like to focus on core business logic and domain models.
+> Then I discovered this Spring Shell, and was very tempted to give it a try :)
+---
+
+## Refs.
+- https://docs.spring.io/spring-shell/reference/index.html
