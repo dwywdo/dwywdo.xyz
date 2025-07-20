@@ -36,7 +36,7 @@ Inside the `Commands` class, let's define a method that represents an command, w
 
 Beside built-in commands, you can see your `hello-world` command and execute it.
 ```bash
-$ 2025-07-20T02:15:53.270+09:00  INFO 56013 --- [spring-shell-test] [           main] .n.b.a.NaverBloggingAssistantApplication : Started SpringShellTestApplication in 1.094 seconds (process running for 1.39)
+$ 2025-07-20T02:15:53.270+09:00  INFO 56013 --- [spring-shell-test] [           main] .n.b.a.SpringShellTestApplication : Started SpringShellTestApplication in 1.094 seconds (process running for 1.39)
 shell:>help
 AVAILABLE COMMANDS
 
