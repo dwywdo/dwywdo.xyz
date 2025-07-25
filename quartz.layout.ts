@@ -2,26 +2,32 @@ import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import { QuartzPluginData } from "./quartz/plugins/vfile"
 
+const recentNotes = [
+  Component.RecentNotes({
+    title: "Recent Posts",
+    limit: 4,
+    linkToMore: "/posts",
+    filter: (f) => f.filePath?.includes("posts") && !f.filePath?.endsWith("index.md")
+  }),
+  Component.RecentNotes({
+    title: "Recent Fleetings",
+    limit: 4,
+    linkToMore: "/fleetings",
+    filter: (f) => f.filePath?.includes("fleetings") && !f.filePath?.endsWith("index.md")
+  })
+]
+
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [...recentNotes.map((c) => Component.MobileOnly(c))],
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/jackyzha0/quartz",
       "Discord Community": "https://discord.gg/cRFFHYye7t",
     },
   }),
-}
-
-let postFilter = function(f: QuartzPluginData): boolean {
-  return f.filePath?.includes("posts") && !f.filePath?.endsWith("index.md") 
-}
-
-
-let fleetingFilter = function(f: QuartzPluginData): boolean {
-  return f.filePath?.includes("fleetings") && !f.filePath?.endsWith("index.md") 
 }
 
 // components for pages that display a single page (e.g. a single note)
@@ -47,6 +53,7 @@ export const defaultContentPageLayout: PageLayout = {
         lang: 'en'
       }
     }),
+    ...recentNotes.map((c) => Component.MobileOnly(c))
   ],
   left: [
     Component.PageTitle(),
@@ -61,8 +68,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.RecentNotes({ title: "Recent Posts", limit: 4, linkToMore: "/posts", filter: postFilter}),
-    Component.RecentNotes({ title: "Recent Fleetings", limit: 4, linkToMore: "/fleetings", filter: fleetingFilter}),
+    ...recentNotes.map((c) => Component.DesktopOnly(c)),
   ],
   right: [
     Component.Graph(),
@@ -86,8 +92,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.RecentNotes({ title: "Recent Posts", limit: 4, linkToMore: "/posts", filter: postFilter}),
-    Component.RecentNotes({ title: "Recent Fleetings", limit: 4, linkToMore: "/fleetings", filter: fleetingFilter}),
+    ...recentNotes.map((c) => Component.DesktopOnly(c)),
   ],
   right: [],
 }

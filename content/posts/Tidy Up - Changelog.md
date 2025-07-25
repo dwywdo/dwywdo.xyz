@@ -10,6 +10,10 @@ date: 2025-07-14
 ---
 A [changelog](https://en.wikipedia.org/wiki/Changelog) for posts with #series/tidy-up
 
+2025-07-25
+- Apply `MobileOnly` / `DesktopOnly` to [Recent Notes](https://quartz.jzhao.xyz/features/recent-notes), to make it responsive on mobile devices. 
+	- See also [Higher-Order Layout Components](https://quartz.jzhao.xyz/layout-components)
+
 2025-07-19
 - Integrate Quartz directory with Obsidian's [Note Toolbar](https://github.com/chrisgurney/obsidian-note-toolbar?tab=readme-ov-file#features)
 
