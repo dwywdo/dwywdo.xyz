@@ -19,7 +19,7 @@ date: 2025-07-17
 
 ### 개략적 추정
 ---
-![[fleetings/attachments/SystemDesignInterview/image-140-x104-y253.png|300]]
+![[image-140-x104-y253.png|300]]
 
 
 
@@ -40,7 +40,7 @@ date: 2025-07-17
 
 ### URL 리디렉션
 ---
-![[fleetings/attachments/SystemDesignInterview/image-141-x97-y75.png|300]]
+![[image-141-x97-y75.png|300]]
 
 
 
@@ -66,14 +66,14 @@ date: 2025-07-17
 
 **p.143** "해시 테이블에 &lt;단축 URL, 원래 URL&gt;의 쌍을 저장한다고 가정한다면,  URL 리디렉션은 다음과 같이 구현"
 
-![[fleetings/attachments/SystemDesignInterview/image-143-x100-y520.png|300]]
+![[image-143-x100-y520.png|300]]
 
 
 ### URL 단축
 ---
 **p.143** "해시 함수는 다음 요구사항을 만족"
 
-![[fleetings/attachments/SystemDesignInterview/image-143-x109-y130.png|300]]
+![[image-143-x109-y130.png|300]]
 
  
 ## 3단계 상세 설계
@@ -89,7 +89,7 @@ date: 2025-07-17
 
 > [!QUOTE] Actual Input Value for Hash Function
 
-![[fleetings/attachments/SystemDesignInterview/image-144-x216-y319.png|300]]
+![[image-144-x216-y319.png|300]]
 
 
 
@@ -116,7 +116,7 @@ date: 2025-07-17
 
 **p.146** "첫 번째 방법은 계산된 해시 값에서 처음 7개 글자만 이용 하는 것이다. 하지만 이렇게 하면 해시 결과가 서로 충돌할 확률이 높아진다. 충돌이 실제로 발생했을 때는, 충돌이 해소될 때까지 사전에 정한 문자열을 해시값에 덧붙인다. 이 절차는 그림 8-5와 같다."
 
-![[fleetings/attachments/SystemDesignInterview/image-146-x96-y339.png|300]]
+![[image-146-x96-y339.png|300]]
 
 **p.146** "단축 URL을 생성할 때 한 번 이상 데이터베이스 질의를 해야 하므로 오버헤드가 크다. 데이터베이스 대신 블룸 필 터를 사용하면 성능을 높일 수 있다."
 
@@ -133,12 +133,12 @@ date: 2025-07-17
 
 ### 두 접근법 비교
 ---
-![[fleetings/attachments/SystemDesignInterview/image-147-x103-y116.png|300]]
+![[image-147-x103-y116.png|300]]
 
 
 ### URL 단축기 상세 설계
 ---
-![[fleetings/attachments/SystemDesignInterview/image-148-x107-y349.png|300]]
+![[image-148-x107-y349.png|300]]
 
 **p.148** "2. 데이터베이스에 해당 URL이 있는지 검사한다."
 
@@ -151,7 +151,7 @@ date: 2025-07-17
 
 ### URL 리디렉션 상세 설계
 ---
-![[fleetings/attachments/SystemDesignInterview/image-149-x104-y78.png|300]]
+![[image-149-x104-y78.png|300]]
 
 
 

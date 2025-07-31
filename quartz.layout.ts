@@ -14,6 +14,12 @@ const recentNotes = [
     limit: 4,
     linkToMore: "/fleetings",
     filter: (f) => f.filePath?.includes("fleetings") && !f.filePath?.endsWith("index.md")
+  }),
+  Component.RecentNotes({
+    title: "Recent Annotations",
+    limit: 4,
+    linkToMore: "/annotations",
+    filter: (f) => f.filePath?.includes("annotations") && !f.filePath?.endsWith("index.md")
   })
 ]
 

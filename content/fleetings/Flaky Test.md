@@ -8,8 +8,13 @@ aliases:
 permalink: 
 date: 2025-07-17
 ---
+Blahblah...
 
+---
+> [!QUOTE] Note
+> Blahblah...
 
-## Refs.
-- [[What Flaky Tests Can Tell You]]
-- [[What is a Flaky Test]]
+> [!EXAMPLE] References
+> - [[What Flaky Tests Can Tell You]]
+> - [[What is a Flaky Test]]
+

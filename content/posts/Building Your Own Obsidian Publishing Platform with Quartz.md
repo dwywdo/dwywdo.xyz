@@ -144,7 +144,7 @@ $ npx quartz sync
 ## Conclusion
 With this setup, You'll complete creating and hosting a blog that maintains the Obsidian-based writing experience using Quartz and GitHub Pages. 
 
-Moving forward, I plan to consistently post on topics related to [[Digital Gardening]], including:
+Moving forward, I plan to consistently post on topics related to [Digital Gardening](https://jzhao.xyz/posts/digital-gardening), including:
 
 1. Useful Obsidian plugins (not just for blogging, but also for personal use)
 2. Various configuration and customization features of Quartz

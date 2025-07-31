@@ -21,7 +21,7 @@ It provides a flexible way using plugins, to connect each steps for handling tex
 > - https://www.youtube.com/watch?v=v5LGaczJaf0
 > 
 > Recently I had a discussion with a teammate to discuss the way to parse and inspect the content of [Confluence Wiki](https://www.atlassian.com/software/confluence) (It provides the HTML of a page via API) for a simple automation tool. Although we use python for our main scripting language, I think it's worth trying Javascript and this framework (I didn't even try tutorial yet, though 😅)
----
-## Refs.
-- https://github.com/unifiedjs/unified
-- https://unifiedjs.com/
+
+> [!EXAMPLE] References
+> - https://github.com/unifiedjs/unified
+> - https://unifiedjs.com/

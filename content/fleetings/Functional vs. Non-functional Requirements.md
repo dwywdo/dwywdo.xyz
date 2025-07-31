@@ -40,7 +40,10 @@ Requirements Analysis
 > Even if they join a new project that launches new service OR introduces a new component, Sadly, sometimes we lose the opportunity to conduct the requirements to a satisfactory level due to resource issues
 > 
 > However, this analysis is still important because the ability to conduct this is kind of starting point for system design that's considered as basic competencies for senior software engineers. You might have seen many articles about system design starts from defining these requirements. 
----
-## Refs.
-- [Functional vs. Non Functional Requirements](https://www.geeksforgeeks.org/software-engineering/functional-vs-non-functional-requirements/)
+
+> [!EXAMPLE] References
+> - [Functional vs. Non Functional Requirements](https://www.geeksforgeeks.org/software-engineering/functional-vs-non-functional-requirements/)
+
+
+
 
