@@ -16,7 +16,7 @@ It provides a flexible way using plugins, to connect each steps for handling tex
 - Conversion (From/To Text)
 
 ---
-> [!QUOTE]- Note
+> [!QUOTE] Note
 > I came across a talk about Quartz 4 by its developer Jacky, hosted by Brandon Boswell. As a major difference between Quartz 4 and it's predecessors, `unfied.js` was introduced.
 > - https://www.youtube.com/watch?v=v5LGaczJaf0
 > 

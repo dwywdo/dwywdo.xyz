@@ -9,7 +9,7 @@ permalink:
 date: 2025-07-20
 ---
 [Source](https://docs.spring.io/spring-shell/reference/commands/organize.html) 
-#### Organizing Commands
+# Organizing Commands
 ---
 **p.** "Spring Shell provides the ability to group commands together, with reasonable defaults."
 
@@ -19,7 +19,7 @@ date: 2025-07-20
 
 
 
-> [!COMMENT]- It's usually compatible with `Legacy Annotations`
+> [!QUOTE] It's usually compatible with `Legacy Annotations`
 
 **p.** "Specify a group() in the @ShellMethod annotation."
 

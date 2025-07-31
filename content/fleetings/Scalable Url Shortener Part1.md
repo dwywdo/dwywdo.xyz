@@ -9,10 +9,10 @@ permalink:
 date: 2025-07-18
 ---
 [Source](https://dev.to/taman9333/scalable-url-shortener-part1-5f5n) 
-#### Scalable Url Shortener Part1
+# Scalable Url Shortener Part1
 ---
  
-##### Database Choice
+## Database Choice
 ---
 **p.** "due to the high volume of read-heavy traffic, our storage solution must be horizontally scalable to handle the load efficiently and maintain low-latency responses as the service grows."
 

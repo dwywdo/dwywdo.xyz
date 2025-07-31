@@ -34,7 +34,7 @@ Requirements Analysis
 		8. Flexibility
 
 ---
-> [!QUOTE]- Note
+> [!QUOTE] Note
 > It's hard to have a chance to conduct this requirements analysis because most developers are brought into software projects during the middle stages, where their main responsibilities involve maintenance and adding new features.
 > 
 > Even if they join a new project that launches new service OR introduces a new component, Sadly, sometimes we lose the opportunity to conduct the requirements to a satisfactory level due to resource issues

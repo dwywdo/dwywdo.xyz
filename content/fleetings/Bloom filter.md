@@ -9,7 +9,7 @@ permalink:
 date: 2025-07-18
 ---
 [Source](https://en.wikipedia.org/w/index.php?title=Bloom_filter&oldid=1298038948) 
-#### Bloom filter
+# Bloom filter
 ---
 **p.** "a space-efficient probabilistic data structure, conceived by Burton Howard Bloom in 1970, that is used to test whether an element is a member of a set."
 
@@ -20,7 +20,7 @@ date: 2025-07-18
 **p.** "fewer than 10 bits per element are required for a 1% false positive probability, independent of the size or number of elements in the set."
 
  
-##### Algorithm description
+## Algorithm description
 ---
 **p.** "m bits"
 
@@ -30,7 +30,7 @@ date: 2025-07-18
 
 
 
-> [!COMMENT]- [Ref](https://stackoverflow.com/questions/658439/how-many-hash-functions-does-my-bloom-filter-need/22467497) How much is `M` proportional to `K`?
+> [!QUOTE] [Ref](https://stackoverflow.com/questions/658439/how-many-hash-functions-does-my-bloom-filter-need/22467497) How much is `M` proportional to `K`?
 > - In general, `K` =~ (M/N) * ln2 (=0.693)
 > - `N` is the number of elements to be inserted (stored)
 
@@ -38,7 +38,7 @@ date: 2025-07-18
 
 
 
-> [!COMMENT]- Element > Hash Function > Array Position
+> [!QUOTE] Element > Hash Function > Array Position
 > - What kind of hash functions are used? How is the position from the array is decided?
 > - Any hash functions can be used because it always results in binary data, which can be interpreted as 32 / 64 bits Integer.
 
@@ -50,7 +50,7 @@ date: 2025-07-18
 
 
 
-> [!COMMENT]- Good Hash Function's 64bits Hash Result: 0x123456789ABCDEF0
+> [!QUOTE] Good Hash Function's 64bits Hash Result: 0x123456789ABCDEF0
 > - 1st Hash Function: 16bits (0x1234)
 > - 2nd Hash Function 16bits (0x5678)
 > - 3rd Hash Function: 16bits (0x9ABC)
@@ -60,18 +60,18 @@ date: 2025-07-18
 
 
 
-> [!COMMENT]- Use a same hash function, but with different values as seeds.
+> [!QUOTE] Use a same hash function, but with different values as seeds.
 
 **p.** "Removing an element from this simple Bloom filter is impossible"
 
 
 
-> [!COMMENT]- Because...
+> [!QUOTE] Because...
 > - There's no way to tell which of the k bits should be cleared.
 > - 비트 하나만 지워도 값을 지우는 효과를 낼 수 있지만, 다른 값을 지울 수 있다는 부작용도 함께 존재.
 
  
-##### Space and time advantages
+## Space and time advantages
 ---
 **p.** "a substantial space advantage over other data structures for representing sets, such as self-balancing binary search trees, tries, hash tables, or simple arrays or linked lists of the entries."
 
@@ -79,13 +79,13 @@ date: 2025-07-18
 
 
 
-> [!COMMENT]- 1% Error => 9.6bits / Elements
+> [!QUOTE] 1% Error => 9.6bits / Elements
 
 **p.** "Bloom filters also have the unusual property that the time needed either to add items or to check whether an item is in the set is a fixed constant, O(k), completely independent of the number of items already in the set."
 
 
 
-> [!COMMENT]- This can be boosted with aid of hardware support, since applying each hash functions can be done in parallel
+> [!QUOTE] This can be boosted with aid of hardware support, since applying each hash functions can be done in parallel
 
 **p.** "In a hardware implementation, however, the Bloom filter shines because its k lookups are independent and can be parallelized."
 
