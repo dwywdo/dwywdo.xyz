@@ -14,7 +14,7 @@ This is usually done by [Testcontainer](https://java.testcontainers.org/)[^2], a
 - TESTCONTAINERS_HOST_OVERRIDE
 - TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE
 
-However, starting a few days ago I confirmed that Testcontainers do not operate properly with failures of the integration tests.
+However, starting a few days ago I confirmed that Testcontainers do not operate properly with Ryuk[^3]-related failures of the integration tests.
 
 ```
 java.lang.IllegalStateException: Could not connect to Ryuk at null null:32768
@@ -74,3 +74,4 @@ export TESTCONTAINERS_HOST_OVERRIDE=$(colima ls -j | jq -r 'select(.address != n
 
 [^1]: [[General Container runtime requirements - Testcontainers for Java]]
 [^2]: [[Testcontainers for Java]]
+[^3]: https://github.com/testcontainers/moby-ryuk
