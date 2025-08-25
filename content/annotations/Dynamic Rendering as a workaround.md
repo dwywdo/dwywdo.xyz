@@ -1,12 +1,12 @@
 ---
-title: Dynamic Rendering as a workaround | Google Search Central | Documentation
-description: 
+title: Dynamic Rendering as a workaround
+description:
 draft: false
 tags:
   - annotation
-aliases: 
-permalink: 
-date: 2025-08-17
+aliases:
+permalink:
+date: 2025-08-25
 ---
 [Source](https://developers.google.com/search/docs/crawling-indexing/javascript/dynamic-rendering) 
 # Dynamic rendering as a workaround
