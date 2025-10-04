@@ -3,6 +3,7 @@ title: AbstractInputSuggest in Obsidian Plugin Development
 description:
 draft: false
 tags:
+  - tech
 aliases:
 permalink:
 date: 2025-10-04
