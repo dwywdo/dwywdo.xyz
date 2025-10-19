@@ -6,7 +6,7 @@ tags:
   - annotation
 aliases:
 permalink:
-date: 2025-10-18
+date: 2025-10-19
 ---
 [Source](https://www.cse.msu.edu/~cse870/Input/SS2002/MiniProject/Sources/DRC.pdf) 
 # Designing Reusable Classes
@@ -231,10 +231,125 @@ date: 2025-10-18
 
 <font color="#5EA33E"><strong>p.6</strong> "Rule 2 Eliminate case analysis.: It is almost always a mistake to explicitly check the class of an object."</font>
 
+![[annotations/attachments/johnsonDesigningReusableClasses/image-6-x35-y507.png|300]]
+
+
+**p.6** "If instance variables are being accessed then self will need to be an argument to the message and more messages may need to be defined to access the instance variables."
+
 
 <font color="#5EA33E"><strong>p.6</strong> "Rule 3 Reduce the number of arguments: Messages with half a dozen or more arguments are hard to read."</font>
 
 
+**p.6** "The number of arguments can be reduced by breaking a message into several smaller messages or by creating a new class that represents a group of arguments."
+
+
+<font color="#49BEFC"><strong>p.6</strong> "by creating a new class that represents a group of arguments."</font>
+
+
+
+> [!QUOTE] Creating a new class is like grouping arguments
+
+
+<font color="#5EA33E"><strong>p.6</strong> "Rule 4 Reduce the size of methods.: Well-designed Smalltalk methods are almost always small."</font>
+
+
+**p.6** "It is easier to subclass a class with small methods"
+
+
+<font color="#49BEFC"><strong>p.6</strong> "Often a method in a superclass is split when a subclass is made."</font>
+
+
+**p.6** "Instead of rewriting the entire method, it is split into pieces and the one piece that has changed is redefined."
+
+
+
+> [!QUOTE] Let's say a programmer needs to create a subclass `B`, by extending a super class `A`. It inherits a method `X` from `A`, but it's required to change the behavior of `X` for `B`. Instead of writing `X`, we can...
+> - Split method `X` with various helper methods. e.g call `X_part1`, `X_part2`, `X_part3` in `X`.
+> - Identify which part needs to be changed by `B`. (For example, `X_part2`)
+> - Instead of re-declaration of `X` in `B`, `B` only needs to override `X_part2`.
+
+![[annotations/attachments/johnsonDesigningReusableClasses/image-6-x316-y502.png|300]]
+
+
+
+> [!QUOTE] Rule 6. A is originally a concrete class, and B extends A. But the fact that B needs to override A's method `x` is that `A` actually doesn't provide enough generalized abstraction that can be applied to `A` and `B`. In other words, `A`'s way to define `x` is too concrete to satisfy `B`'s requirements, hence overriding by `B`. So it's better to define a new abstract class `C` that move `A`'s other methods to `C`.
+
+
 ### 5.2 Rules for Finding Abstract Classes
+---
+
+<font color="#5EA33E"><strong>p.6</strong> "Rule 5 Class hierarchies should be deep and narrow: A well developed class hierarchy should be several layers deep."</font>
+
+
+<font color="#EF7DFA"><strong>p.6</strong> "A shallow class hierarchy is evidence that change is needed, but does not give any idea how to make that change."</font>
+
+
+**p.6** "An obvious way to make a new superclass is to find some sibling classes that implement the same message and try to migrate the method to a common superclass."
+
+
+<font color="#5EA33E"><strong>p.6</strong> "Rule 6 The top of the class hierarchy should be abstract.: Inheritance for generalization or code sharing usually indicates the need for a new subclass."</font>
+
+
+
+> [!QUOTE] Inheriting a concrete class isn't a good choice because a concrete class needs to define their own way for data representation.
+
+
+<font color="#5EA33E"><strong>p.7</strong> "Rule 7 Minimize accesses to variables.  Since one of the main differences between abstract and concrete classes is the presence of data representation, classes can be made more abstract by eliminating their dependence on their data representation."</font>
+
+
+**p.7** "One way this can be done is to access all variables by sending messages. The data representation can be changed by redefining the accessing messages."
+
+
+<font color="#5EA33E"><strong>p.7</strong> "Rule 8 Subclasses should be specializations.  There are several different ways that inheritance can be used[HO87]."</font>
+
+
+**p.7** "Specialization is the ideal that is usually described, where the elements of the subclass can all be thought of as elements of the superclass."
+
+
+**p.7** "An important special case of specialization is making concrete classes."
+
+
+<font color="#49BEFC"><strong>p.7</strong> "The abstract class requires its subclasses to define certain operations, so making a concrete class is similar to filling in the blanks in a program template."</font>
+
+
+<font color="#5EA33E"><strong>p.7</strong> "An abstract definition is that anywhere the superclass is used, the subclass can be used. Thus, a subclass has a superset of the behavior of its superclass."</font>
+
+
+
+> [!QUOTE] Liskov Substitution Principle
+
+
+### 5.3 Rules for Finding Frameworks
+---
+
+<font color="#5EA33E"><strong>p.7</strong> "Rule 9 Split large classes.  A class is supposed to represent an abstraction."</font>
+
+
+<font color="#EF7DFA"><strong>p.7</strong> "If a class has 50 to 100 methods then it must represent a complicated abstraction. It is likely that such a class is not well defined and probably consists of several different abstractions."</font>
+
+
+<font color="#5EA33E"><strong>p.7</strong> "Rule 10 Factor implementation differences into subcomponents.  If some subclasses implement a method one way and others implement it another way then the implementation of that method is independent of the superclass."</font>
+
+
+
+> [!QUOTE] This is a basis of Strategy Pattern
+
+
+<font color="#5EA33E"><strong>p.7</strong> "Rule 11 Separate methods that do not communicate.  A class should almost always be split when half of its methods access half of its instance variables and the other half of its methods access the other half of its variables."</font>
+
+
+<font color="#5EA33E"><strong>p.7</strong> "Rule 12 Send messages to components instead of to self.  An inheritance-based framework can be converted into a component-based framework black box structure by replacing overridden methods by message sends to components."</font>
+
+
+**p.8** "Reducing the coupling between framework components so that the framework works with any plug-compatible object increases its cohesion and generality."
+
+
+<font color="#5EA33E"><strong>p.8</strong> "Rule 13 Reduce implicit parameter passing.  Sometimes it is hard to split a class into two parts because methods that should go in different classes access the same instance variable."</font>
+
+
+**p.8** "This can happen because the instance variable is being treated as a global variable when it should be passed as a parameter between methods."
+
+ 
+## 6. Conclusion
 ---
 
