@@ -3,6 +3,7 @@ title: Eliminating Case Analysis
 description:
 draft: false
 tags:
+  - concept
 aliases:
 permalink:
 date: 2025-10-23
@@ -16,8 +17,7 @@ It tries to remove code like...
 ```java
 if (object instanceof A) {
 	A.method();
-}
-else if (object instanceof B) {
+} else if (object instanceof B) {
 	B.method();
 }
 ```
