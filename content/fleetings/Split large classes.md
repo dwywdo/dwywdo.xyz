@@ -104,7 +104,6 @@ With this rule, we have following advantages.
 
 ---
 > [!QUOTE] Note
-> Blahblah...
 
 > [!EXAMPLE] References
-> - 
+> - [[Designing Reusable Classes#5.1 Rules for Finding Standard Protocols]]
