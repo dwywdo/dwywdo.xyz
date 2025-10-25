@@ -30,7 +30,7 @@ public class AssetReportA {
 		System.out.println("Report A Generating Content");
 	}
 	
-	// There are instance varilables in A
+	// There may be instance variables in AssetReportA
 }
 
 public class AssetReportB extends AssetReportA {
@@ -84,7 +84,7 @@ Basically this is a way to find a good abstraction hidden among concrete classes
 
 ---
 > [!QUOTE] Note
-> Notice that this is the case where we inherits a `CONCRETE` class for generalization, OR code sharing
+> Notice that this rule is for the case where we inherits a `CONCRETE` class for generalization, OR code sharing. It's not always applicable.
 
 > [!EXAMPLE] References
 > - [[Designing Reusable Classes#5.1 Rules for Finding Standard Protocols]]
