@@ -63,7 +63,6 @@ interface Parser {
 interface CodeGenerator {
 	MachineCode generate(SyntaxTree tree);
 }
-
 // And other interfaces...
 ```
 
