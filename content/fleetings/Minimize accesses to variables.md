@@ -3,6 +3,7 @@ title: Minimize accesses to variables
 description:
 draft: false
 tags:
+  - concept
 aliases:
 permalink:
 date: 2025-10-25
