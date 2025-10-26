@@ -3,6 +3,7 @@ title: Factor implementation differences into subcomponents
 description:
 draft: false
 tags:
+  - concept
 aliases:
 permalink:
 date: 2025-10-26
