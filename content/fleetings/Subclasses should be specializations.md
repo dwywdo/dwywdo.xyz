@@ -80,4 +80,4 @@ This rule has benefits such as
 
 
 > [!EXAMPLE] References
-> - [[Designing Reusable Classes#5.1 Rules for Finding Standard Protocols]]
+> - [[Designing Reusable Classes#5.2 Rules for Finding Abstract Classes]]

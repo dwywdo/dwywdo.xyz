@@ -106,4 +106,4 @@ With this rule, we have following advantages.
 > [!QUOTE] Note
 
 > [!EXAMPLE] References
-> - [[Designing Reusable Classes#5.1 Rules for Finding Standard Protocols]]
+> - [[Designing Reusable Classes#5.3 Rules for Finding Frameworks]]

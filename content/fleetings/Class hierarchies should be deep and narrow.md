@@ -90,5 +90,5 @@ As a result we have
 > Blahblah...
 
 > [!EXAMPLE] References
-> - [[Designing Reusable Classes#5.1 Rules for Finding Standard Protocols]]
+> - [[Designing Reusable Classes#5.2 Rules for Finding Abstract Classes]]
 > - [[Reduce the size of methods]]

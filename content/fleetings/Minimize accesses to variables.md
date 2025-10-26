@@ -196,4 +196,4 @@ So in this example we isolate the way of data representation for each subclasses
 > [!QUOTE] Note
 
 > [!EXAMPLE] References
-> - [[Designing Reusable Classes#5.1 Rules for Finding Standard Protocols]]
+> - [[Designing Reusable Classes#5.2 Rules for Finding Abstract Classes]]

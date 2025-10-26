@@ -87,4 +87,4 @@ Basically this is a way to find a good abstraction hidden among concrete classes
 > Notice that this rule is for the case where we inherits a `CONCRETE` class for generalization, OR code sharing. It's not always applicable.
 
 > [!EXAMPLE] References
-> - [[Designing Reusable Classes#5.1 Rules for Finding Standard Protocols]]
+> - [[Designing Reusable Classes#5.2 Rules for Finding Abstract Classes]]
