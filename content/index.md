@@ -1,32 +1,12 @@
 ---
 title: Welcome 🙇🏻‍♂️
-excalidraw-plugin: parsed
-tags:
-  - excalidraw
-  - "#note"
-excalidraw-open-md: true
 ---
-![[index.svg]]
+This website is a space where I document the process of internalizing the media, ideas, and subjects I personally encounter—mostly through reading and learning. In other words, it’s where I practice what’s often called "[Learning in Public](https://www.swyx.io/learn-in-public)".
 
+As a first step, I capture almost everything that I read / annotate from books and videos and archive them at [[annotations]], and it would be hard to find anything particularly interesting here.
 
+[[fleetings]], is a place where I express my understanding by putting into words more refined, simple notes and concepts.
 
-%%
-# Excalidraw Data
+[[posts]] are the least frequently written type of content, but they are a collection of writings where I put together everything I want to keep as a single piece—whether personal or related to learning—written in the style of blog posts.
 
-## Text Elements
-%%
-## Drawing
-```compressed-json
-N4KAkARALgngDgUwgLgAQQQDwMYEMA2AlgCYBOuA7hADTgQBuCpAzoQPYB2KqATLZMzYBXUtiRoIACyhQ4zZAHoFAc0JRJQgEYA6bGwC2CgF7N6hbEcK4OCtptbErHALRY8RMpWdx8Q1TdIEfARcZgRmBShcZQUebQB2bQBWGjoghH0EDihmbgBtcDBQMBKIEm4IACEYAHVsTABGAE1lJuYAFXx4mqbKgC1cAFUARRrUkshYRArA7CiOZWDx0sxu
-
-Zx4eAA5tAGYANniGzfik/lKYNZ2T7QAGBoBOJJ2GnlPCyAoSdW4G5+0tpINJJ7V5nSCSBCEZTSbhJe7aR7xG7PUHvCDWRbiVA3MEQZhQUhsADWCAAwmx8GxSBUAMQNBD0+nLSCaXDYInKQlCDjEcmU6kSAnWZhwXCBbLMiAAM0I+HwAGVYEsJIIPJL8YSSTUvpJuHw0RriQhFTBlehVeVcVzoRxwrk0A1cWxRdg1BcHTccWjOcI4ABJYj21B5AC6
-
-uKl5EyAe4HCEctxhB5WAquBukq5PNtzCDxQm0HgWJ27wAvriwghiLCePd7ptNq8vXnGCx2FwHXtcc3WJwAHKcMQ/PZ7Bp7JL1gAsHbRhGYABF0lAK9wCUIELjNMIeQBRYKZbJB0O4oRwYi4ReVh3xK43cc3Pbj+47G7xXFEDhEmNx/CvtjspdoKUCDCQpi3AMM6FwOA4EVM8sVzaAIUyCoiGhKBlgYQgEAoSo2Q5DNeQpKlaSlEjSPQ7ARHFKA/U
-
-XfRFU1MlCIFdA6QZNjyMorJqNonD2R9bkCP5CohQ4EUxS4jjSComiMgAMVlBUlSxPEKUtQoIAoqSuJkuiCSNbViG+NB9VKTTpNo+ijRNM0VLVM4NM47IdIAJWEG07R+eyzO02iAHkXTdH5PS8xzuLkzgoFk3B9Fld1UDeUzQp02SIvlQgjCxHhG0gbynNo9osCgABBFC23QYIpTQkKtLyjIYNIYqpLYCgIVwC9UFjeN1NysL9C3HkiqalqQna9Eh
-
-sk8yMkGwkKHaAsZk3St7OYbBCTlAANWEbjiTYHz2G5HxOZbVopfAmm4A54TvTYdjhK4EsgIw2AMbhc0gegCFXPUQOqyb9FcgSsyDCB8PQzkSDSjK9WyiBweIRUEDgWF7LhgBZNhiAQfrcE0YJ2sA/AwhR0gSD5Ii0DeqoKVG0hlFZAAKHgGhfXhmeoVmWZuZIAEpJWchBlDjMUZjp3BGafdmeAl3hpa5pJeZ+7rQsskl/KgVsg06791IjaKEH5pM
-
-SYWV60SyHG8eXUhV1xbAiCRtAVzXNEOD1y3rbRYQoDfLFHcV0o7AAKwQOZmHlF24HRzHsdx/9UAJon1LZdXGHaZ78BNvMpmUsJgjmVtJQo/EDDm6Y0C1n8/3xoCnbzfBQmKvOU7Tz85RA8BSzoGVghzUDiyAA===
-```
-%%****
+Basically, this space is much more of a personal one rather than a place for sharing knowledge or delivering precise information, and I would appreciate it if you understand that its main purpose is closer to being a journal or a record of personal footprints.
