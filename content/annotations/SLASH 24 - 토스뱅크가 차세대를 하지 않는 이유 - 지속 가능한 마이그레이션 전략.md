@@ -6,7 +6,7 @@ tags:
   - annotation
 aliases:
 permalink:
-date: 2025-10-30
+date: 2025-11-10
 ---
 [Source](https://www.youtube.com/watch?v=LwH9h8dG3PQ&list=PL1DJtS1Hv1PiGXmgruP1_gM2TSvQiOsFL&index=8)
 
