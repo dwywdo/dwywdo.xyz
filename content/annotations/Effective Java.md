@@ -6,9 +6,9 @@ tags:
   - annotation
 aliases:
 permalink:
-date: 2025-12-20
+date: 2025-12-21
 ---
-[Source]() 
+[Source](https://product.kyobobook.co.kr/detail/S000001033066) 
 # 3장 모든 객체의 공통 메서드
 ---
 
@@ -18,7 +18,7 @@ date: 2025-12-20
 <font color="#EF7DFA"><strong>p.68</strong> "메서드를 잘못 구현하면 대상 클래스가 이 규약을 준수한다고 가정  하는 클래스(HashMap과 HashSet 등)를 오동작하게 만들 수 있다."</font>
 
  
-## 아이템 10  equals는 일반 규약을 지켜 재정의하라
+## 아이템 10 equals는 일반 규약을 지켜 재정의하라
 ---
 
 <font color="#5EA33E"><strong>p.69</strong> "다음에서 열거한 상황 중 하나에 해당한다면 재정의하지 않  는 것이 최선"</font>
@@ -205,7 +205,7 @@ date: 2025-12-20
 <font color="#5EA33E"><strong>p.82</strong> "equals(hashCode도 마찬가지)를 작성하고 테스트하는 일은 지루하고 이를 테  스트하는 코드도 항상 뻔하다. 다행히 이 작업을 대신해줄 오픈소스가 있으니,  그 친구는 바로 구글이 만든 AutoValue 프레임워크다."</font>
 
  
-## 아이템 11  Third Edition equals를 재정의하려거든 hashCode도  재정의하라
+## 아이템 11 equals를 재정의하려거든 hashCode도 재정의하라
 ---
 
 <font color="#5EA33E"><strong>p.84</strong> "equals를 재정의한 클래스 모두에서 hashCode도 재정의해야 한다."</font>
