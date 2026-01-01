@@ -8,7 +8,10 @@ aliases:
 permalink:
 date: 2026-01-01
 ---
-[Source](https://docs.oracle.com/en/java/javase/21/docs/api/java.management/javax/management/MBeanServer.html)
+[Source](https://docs.oracle.com/en/java/javase/21/docs/api/java.management/javax/management/MBeanServer.html) 
+# Interface MBeanServer
+---
+
 <font color="#5EA33E"><strong>p.</strong> "It contains the methods necessary for the creation, registration, and deletion of MBeans as well as the access methods for registered MBeans. This is the core component of the JMX infrastructure."</font>
 
 
