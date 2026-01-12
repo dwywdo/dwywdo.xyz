@@ -1,12 +1,12 @@
 ---
-title: "Troubleshooting Java"
-description: 
-draft: true
+title: Troubleshooting Java
+description:
+draft: false
 tags:
   - annotation
-aliases: 
-permalink: 
-date: '2026-01-12'
+aliases:
+permalink:
+date: 2026-01-12
 ---
 [Source](https://product.kyobobook.co.kr/detail/S000213029114?utm_source=google&utm_medium=cpc&utm_campaign=googleSearch&gt_network=g&gt_keyword=&gt_target_id=aud-901091942354:dsa-435935280379&gt_campaign_id=9979905549&gt_adgroup_id=132556570510&gad_source=1) 
 # 트러블슈팅 기본 테크닉

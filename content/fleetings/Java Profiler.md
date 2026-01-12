@@ -3,6 +3,7 @@ title: Java Profiler
 description:
 draft: false
 tags:
+  - tech
 aliases:
 permalink:
 date: 2026-01-09
