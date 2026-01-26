@@ -6,7 +6,7 @@ tags:
   - annotation
 aliases:
 permalink:
-date: 2026-01-12
+date: 2026-01-26
 ---
 [Source](https://product.kyobobook.co.kr/detail/S000213029114?utm_source=google&utm_medium=cpc&utm_campaign=googleSearch&gt_network=g&gt_keyword=&gt_target_id=aud-901091942354:dsa-435935280379&gt_campaign_id=9979905549&gt_adgroup_id=132556570510&gad_source=1) 
 # 트러블슈팅 기본 테크닉
@@ -1093,6 +1093,21 @@ date: 2026-01-12
  
 # 멀티스레드 아키텍처의  락 문제 조사하기
 ---
+
+**p.203** "멀티스레드 아키텍처를 활용하는 앱의 실행을 조사하는 방법"
+
+
+**p.203** "제대로 이해하려면 스레드 상태 및 동기화 같은 자바의 스레딩 메커니즘에 관  한 기본 지식이 필요"
+
+ 
+## 9.1 스레드 락 모니터링
+---
+
+**p.204** "한 스레드가 리소스를 변경하는 동안 다른 스레드가 리소스에 액세스하지 못하게 한다."
+
+
+**p.204** "다른 스레드가 모두 완료되거나 특정 시점까지 실행된 이후에 특정 스레드의 작업을 재개한다."
+
  
 # 스레드 덤프로  데드락 문제 조사하기
 ---
@@ -1102,4 +1117,318 @@ date: 2026-01-12
  
 # 대규모 시스템에 배포된  앱의 동작 조사하기
 ---
+ 
+# APPENDIX D 자바 스레드 이해
+---
+ 
+## D.1 스레드란 무엇인가?
+---
+
+<font color="#5EA33E"><strong>p.302</strong> "스레드는 실행 중인 프로  세스에서 독립적인 일련의 작업(sequence of operations)"</font>
+
+
+**p.302** "모든 프로세스는 동시 실행되는 다  수의 스레드를 가질 수 있으며, 여러 태스크를 앱에서 병렬로 실행할 수 있다. 스레드는 동시성  (concurrency)을 다루는 프로그래밍 언어에서 필수적인 구성 요소다."
+
+
+**p.302** "앱은 하나  의 스레드(메인 스레드)에서 시작되고 있다. 그러다 다른 스레드를 시작하고, 그 스레드는 또 다른  스레드를 시작하는 식으로 계속 진행"
+
+
+<font color="#EF7DFA"><strong>p.302</strong> "각 스레드는 다른 스레드와 독립적이라는 사실을 잊  지 말라."</font>
+
+
+<font color="#EF7DFA"><strong>p.302</strong> "메인 스레드는 앱 자체보다 훨씬 먼저 실행이 종료될 수 있다."</font>
+
+
+**p.302** "모든 스레드가 중단되  면 프로세스도 중단"
+
+![[annotations/attachments/TroubleshootingJava/image-302-x67-y248.png|300]]
+
+
+**p.302** "같은 스레드에서 커맨드 A가 커맨드 B  다 앞에 있으면 당연히 A가 B보다 먼저 실행된다."
+
+
+<font color="#EF7DFA"><strong>p.302</strong> "스레드 간에는 서로 독립적이므로 별도  의 스레드에 있는 두 커맨드 A와 B에 대해서는 순서가 보장되지 않는다. 즉, A가 B보다 먼저 실행  될 수 있고 그 반대일 수도 있다(그림 D.2)."</font>
+
+ 
+## D.2 스레드의 수명 주기
+---
+
+**p.304** "스레드는 실행 도중 여러 상  태를 거친다"
+
+
+<font color="#49BEFC"><strong>p.304</strong> "New(시작): 인스턴스화 직후(시작되기 전) 스레드의 상태다. 이 상태에서 스레드는 단순 자바 객  체로, 앱은 아직 스레드에 정의된 커맨드를 실행할 수 없다."</font>
+
+
+<font color="#49BEFC"><strong>p.304</strong> "Runnable(실행 가능): start() 메서드가 호출된 이후다. JVM은 스레드에 커맨드를 실행할 수  있으며, 다음 두 하위 상태(substate) 중 하나로 만든다."</font>
+
+
+**p.304** "Ready(준비): 스레드는 실행되지 않지만 JVM은 언제라도 스레드를 실행할 수 있는 상태"
+
+
+**p.304** "Running(실행 중): 스레드가 실행 중인 상태. 현재 CPU가 커맨드를 실행하고 있다."
+
+
+<font color="#49BEFC"><strong>p.304</strong> "Blocked(차단됨): 스레드가 시작은 되었으나 일시적으로 실행 가능(runnable) 상태가 아닌 경우  다. 따라서 JVM은 커맨드를 실행할 수 없다....차단된 상태에서 스레드  는 다음 하위 상태 중 하나에 있다."</font>
+
+
+**p.304** "Monitored(모니터링됨): 스레드가 동기화 블록(동기화 블록의 액세스를 제어하는 객체)의 모니  터에 의해 중단되고 해당 블록을 실행하기 위해 해제를 기다리는 상태"
+
+
+**p.304** "aiting(대기 중): 실행 도중 모니터의 wait() 메서드가 호출되어 현재 스레드가 중단된 상  태. notify() 또는 notifyAll() 메서드가 호출될 때까지 스레드는 차단된 상태를 유지한다."
+
+
+**p.304** "Sleeping(잠자기): Thread 클래스의 sleep() 메서드가 호출되어 현재 스레드를 지정된 시간  동안 중단한다. 중단 시간은 sleep() 메서드에 인숫값으로 전달한다. 이 시간이 경과한 후  에는 스레드가 다시 실행 가능 상태가 된다."
+
+
+**p.304** "Parked(파킹됨): 대기 중 상태와 거의 같다. 누군가 park() 메서드를 호출하면 현재 스레드  는 이 상태로 바뀌며, 이후 unpark() 메서드가 호출될 때까지 계속 차단된다."
+
+
+<font color="#49BEFC"><strong>p.304</strong> "Dead(종료됨): 스레드는 커맨드 집합을 실행 완료하거나, Error나 Exception 때문에 중단"</font>
+
+
+**p.305** "이렇게 한번 종료된 스레드는 재시작할 수 없다."
+
+![[annotations/attachments/TroubleshootingJava/image-305-x59-y437.png|300]]
+
+
+**p.305** "start() 메서드를 호출하면 스레드는 New에서 Runnable로 바뀐다."
+
+
+**p.305** "Runnable 상태가 되면 스레드는 Ready와 Running 사이를 들락날락"
+
+
+**p.305** "다음과 같은 경우, 스레드는 Blocked 상태가 될 수 있다."
+
+
+<font color="#49BEFC"><strong>p.305</strong> "hread 클래스의 sleep() 메서드가 호출되어 현재 스레드가 일시적으로 차단"</font>
+
+
+<font color="#49BEFC"><strong>p.305</strong> "누군가 join() 메서드를 호출하여 현재 스레드가 다른 스레드를 기다리게 만든다."</font>
+
+
+<font color="#49BEFC"><strong>p.305</strong> "누군가 모니터의 wait() 메서드를 호출하여 notify() 또는 notifyAll() 메서드가 호출될  때까지 현재 스레드의 실행을 중단"</font>
+
+
+<font color="#49BEFC"><strong>p.305</strong> "동기화 블록의 모니터는 다른 액티브 스레드가 동기화 블록의 실행을 마칠 때까지 스레드  실행을 중단"</font>
+
+
+**p.305** "스레드는 실행을 완료하거나 다른 스레드가 끼어들어 중단되면 Dead(종료) 상태로 바뀐다."
+
+
+<font color="#EF7DFA"><strong>p.305</strong> "Blocked에서 Dead로의 상태 전이는 JVM이 허용하지 않는다."</font>
+
+
+<font color="#EF7DFA"><strong>p.305</strong> "차단된 스레드를 다른 스레드가  끼어들면 InterruptedException이 발생한다."</font>
+
+ 
+## D.3 스레드 동기화
+---
+
+**p.306** "스레드를 동기화하는  가장 일반적인 방법 몇 가지"
+
+
+### D.3.1 동기화 블록
+---
+
+**p.306** "동기화 코드를 통해  한 번에 하나의 스레드만 허용함으로써 주어진 코드의 동시 실행을 사전 차단하겠다는 의도"
+
+![[annotations/attachments/TroubleshootingJava/image-306-x63-y341.png|300]]
+
+![[annotations/attachments/TroubleshootingJava/image-306-x63-y222.png|300]]
+
+
+<font color="#5EA33E"><strong>p.306</strong> "모든 동기화 블록에는 두  가지 중요한 구성 요소가 있다."</font>
+
+
+<font color="#49BEFC"><strong>p.306</strong> "• 모니터(monitor): 동기화 커맨드의 실행을 관장하는 객체"</font>
+
+
+<font color="#49BEFC"><strong>p.306</strong> "• 커맨드 블록(block of instruction): 동기화한 실제 커맨드"</font>
+
+
+<font color="#5EA33E"><strong>p.307</strong> "비스태틱(nonstatic) 메서드는 인스턴스 &quot;this&quot;를, 스태틱 메서드는 클래스의 타입 인  스턴스를 각각 모니터로 사용"</font>
+
+
+**p.307** "스레드가 동기화 블록에 들어가면 모  니터에서 락을 얻는다. 락을 가진 스레드가 락을 해제할 때까지 다른 스레드는 동기화 블록에 들  어갈 수 없다."
+
+
+**p.307** "두  동기화 블록이 상이한 두 모니터를 사용하는 경우에는 이들은 서로 동기화되지 않는다."
+
+![[annotations/attachments/TroubleshootingJava/image-308-x86-y525.png|300]]
+
+
+<font color="#5EA33E"><strong>p.308</strong> "어떤 스레드가 동기화 코드 블록의 모니터에 의해 차단되었는지 확인할 수 있다."</font>
+
+
+### D.3.2 wait(), notify(), notifyAll() +
+---
+
+**p.309** "동기화 블  록의 모니터에서 wait() 메서드를 사용하면 스레드를 무한 대기시킬 수 있다."
+
+
+**p.309** "그럼 다른 스레드가  모니터의 notify() 또는 notifyAll() 메서드를 사용하여 대기 중인 스레드에게 작업을 계속하라  고 &#39;알려줄(tell)&#39; 수 있다."
+
+
+<font color="#5EA33E"><strong>p.309</strong> "wait(), notify(), notifyAll()은 동기화 블록에서 사용할 때만 효과가 있다. 이들은 사실 동기  화 블록의 모니터의 동작이므로 모니터 없이는 사용 자체가 불가능하다."</font>
+
+![[annotations/attachments/TroubleshootingJava/image-309-x114-y225.png|300]]
+
+
+**p.309** "7장에서 여러 스레드가 리소스를 공유하는 프로듀  서-컨슈머 방식으로 구현한 앱을 설명했다. 프로듀서 스레드는 공유 리소스에 값을 추가하고 컨슈  머 스레드는 이 값을 삭제한다."
+
+
+<font color="#EF7DFA"><strong>p.309</strong> "공유 리소스에 아무 값도 없으면 어떻게 될까? 이런 경우 컨슈머는  실행을 하는 의미가 없다."</font>
+
+
+<font color="#5EA33E"><strong>p.309</strong> "공유 리소스에 값이 없으면 컨슈머를 대기  시키고, 프로듀서가 새 값을 추가한 이후에만 실행을 재개하도록 만드는 것이 합리적"</font>
+
+
+### D.3.3 스레드 조인
+---
+
+<font color="#5EA33E"><strong>p.310</strong> "wait/notify 패턴과 다른 점은 스레드가 알림을 받을 때까지 기다리지  않는다는 것이다. 스레드는 그냥 다른 스레드가 실행을 마칠 때까지 기다릴 뿐이다."</font>
+
+
+**p.310** "서로 다른 독립적인 두 데이터 소스에서 가져온 데이터에 따라 모종의 처리를 해야 한다고 가정"
+
+
+**p.310** "데이터를 처리하는 스레드는 데이터를 조회하는 두 스레드가 모두 완료될  때까지 기다렸다 일을 시작해야 한다."
+
+
+<font color="#5EA33E"><strong>p.310</strong> "다시 말해, 처리 스레드는 두 조회 스레드에 조인하는 것이  다(그림 D.10)."</font>
+
+
+<font color="#EF7DFA"><strong>p.311</strong> "한 스레드가 다른 스레드를 대기하거나, 적체되거나(stuck), 영원히 종  료되지 않으면 이 스레드에 조인하는 스레드는 절대로 실행되지 않을 것"</font>
+
+![[annotations/attachments/TroubleshootingJava/image-311-x64-y308.png|300]]
+
+
+### D.3.4 정해진 시간 동안 스레드 차단
+---
+
+<font color="#5EA33E"><strong>p.311</strong> "스레드를 주어진 시간 동안 대기시켜야 할 때도 있다. 이런 경우 스레드는 &#39;timed waiting(시간 초  과 대기)&#39; 또는 &#39;sleeping(잠자기)&#39; 상태가 된다."</font>
+
+
+<font color="#49BEFC"><strong>p.311</strong> "leep(): Thread 클래스에 있는 스태틱 메서드 sleep()을 사용"</font>
+
+
+<font color="#49BEFC"><strong>p.311</strong> "wait(long timeout): 타임아웃 매개변수를 받는 wait() 메서드 역시 매개변수 없는 wait()  메서드(D.3.2)와 동일하나, 주어진 타임아웃 시간(밀리초)이 지나면 스레드를 자동으로 깨운다."</font>
+
+
+<font color="#49BEFC"><strong>p.312</strong> "join(long timeout): join() 메서드(D.3.3)와 동일하나, 주어진 타임아웃 시간이 지나면 자동  으로 조인한다."</font>
+
+
+<font color="#EF7DFA"><strong>p.312</strong> "자주 목격되는 안티패턴은 4장에서 설명한 wait() 대신 sleep() 메서드로 스레드를 대기  시키는 것"</font>
+
+
+**p.312** "wait()나 notify() 대신 타임아웃 방식으로 접근하는 것은 대개 별로 좋은 방법이 아니다.  스레드가 실행을 재개하는 시점을 코드에서 결정할 수 있다면 sleep() 대신 wait() 및 notify()를 사용하라."
+
+
+### D.3.5 스레드와 블로킹 객체 동기화하기
+---
+
+<font color="#49BEFC"><strong>p.312</strong> "Semaphore(세마포어): 주어진 코드 블록을 실행할 수 있는 스레드의 수를 제한할 의도"</font>
+
+
+<font color="#49BEFC"><strong>p.312</strong> "CyclicBarrier(사이클릭배리어): 주어진 코드 블록을 실행하기 위해 적어도 특정 개수 이상의  스레드가 액티브 상태인지 확인하는 용도"</font>
+
+
+<font color="#49BEFC"><strong>p.312</strong> "Lock(락): 좀 더 광범위한 동기화 옵션을 제공"</font>
+
+
+<font color="#49BEFC"><strong>p.312</strong> "Latch(래치): 다른 스레드의 특정 로직이 수행될 때까지 일부 스레드를 대기시키는 목적"</font>
+
+
+<font color="#EF7DFA"><strong>p.313</strong> "이런 객체를 코드에 오버엔지니어링(overengineering)&#39;하는 식으로 잘  못 사용하는 개발자들이 의외로 많다."</font>
+
+
+<font color="#5EA33E"><strong>p.313</strong> "이런 객체를 사용해야 할 경우 작동 원리를 사전에 철저히 이해하기 바란다."</font>
+
+ 
+## D.4 멀티스레드 아키텍처의 일반적인 문제
+---
+
+<font color="#49BEFC"><strong>p.313</strong> "•경쟁 상태(race condition): 둘 이상의 스레드가 공유된 리소스를 서로 고치려고 경쟁한다."</font>
+
+
+<font color="#49BEFC"><strong>p.313</strong> "•데드락(deadlock): 둘 이상의 스레드가 서로를 기다린다."</font>
+
+
+<font color="#49BEFC"><strong>p.313</strong> "리브락(livelock): 둘 이상의 스레드가 중단 조건을 만족하지 못하여 아무런 의미 있는 일을 하  지 못한 채 계속 실행된다."</font>
+
+
+<font color="#49BEFC"><strong>p.313</strong> "기아(starvation): JVM이 다른 스레드를 실행하는 동안 스레드가 지속적으로 차단된다. 이렇게  차단된 스레드는 커맨드를 실행할 수 없다."</font>
+
+
+### D.4.1 경쟁 상태
+---
+
+<font color="#5EA33E"><strong>p.313</strong> "경쟁 상태는 여러 스레드가 동일한 리소스를 변경하려고 다툴 때 일어난다."</font>
+
+![[annotations/attachments/TroubleshootingJava/image-314-x80-y419.png|300]]
+
+
+### .4.2 데드락
+---
+
+<font color="#5EA33E"><strong>p.314</strong> "데드락은 둘 이상의 스레드가 중단된 이후 자신의 실행을 재개하려고 각자 상대방을 기다리는 경  우"</font>
+
+
+
+> [!QUOTE] 중단된 이후의 이야기
+
+
+**p.314** "이런 상황에서는 앱 전체 또는 일부가 정지되어 주어진 기능을 실행할 수 없게 된다."
+
+![[annotations/attachments/TroubleshootingJava/image-314-x135-y205.png|300]]
+
+
+**p.314** "한 스레드는 리소스 A의 락을, 다른 스레드  는 리소스 B의 락을 각각 획득한다. 그러나 두 스레드가 각자 실행을 재개하려면 상대방이 획득한  리소스가 필요하다. T1은 T2가 리소스 A를 해제하기를 기다리고, 동시에 T2는 T1이 리소스 B를  해제하기를 기다린다."
+
+
+<font color="#5EA33E"><strong>p.314</strong> "두 스레드 모두 상대방이 필요한 리소스를 놓아주길 기다리므로 둘 중 어느  쪽도 실행을 재개할 수가 없다. 이것이 바로 데드락"</font>
+
+![[annotations/attachments/TroubleshootingJava/image-315-x82-y575.png|300]]
+
+
+**p.315** "중첩된 동기화 블록에 이르면 두 스레드 중 어느 쪽도 실행을 재개할 수 없다."
+
+
+### 0.4.3 리브락
+---
+
+<font color="#5EA33E"><strong>p.315</strong> "스레드가 리브락에 빠지면 항상 주어진 조건에서 스레  드가 중단돼야 하는 조건임에도 실행을 계속한다."</font>
+
+
+<font color="#EF7DFA"><strong>p.315</strong> "시스템  리소스는 무차별적으로 소모된다. 리브락은 앱 실행에 성능 문제를 일으킬 수 있다."</font>
+
+
+**p.315** "두 스레드 T1, T2가 루프에  서 반복된다. T1은 실행을 중단하기 위해 마지막 반복 전에 조건을 True로 만든다. 다음번에 T1이  조건식을 만나면 True가 되어 실행이 중단되어야 하지만, 다른 스레드인 T2가 그새 조건을 False  로 변경하기 때문에 그렇게 작동되지 않는다."
+
+![[annotations/attachments/TroubleshootingJava/image-316-x61-y475.png|300]]
+
+
+**p.316** "실제로 리브락은 이보다 훨씬 더 복잡한 시나리오에서 발생할 수 있다. 또 둘 이  상의 스레드가 연관되어 일어날 수도 있다."
+
+
+### D.4.4 기아
+---
+
+<font color="#5EA33E"><strong>p.316</strong> "특정 스레드가 실행 가능한 상태임에도 실행 대상에  서 지속적으로 배제되는 기아 현상도 많이 발생하는 문제"</font>
+
+
+**p.316** "JVM 초기 버전 시절, 개발자가 특정 스레드에 우선순위를 낮게 설정하면 이런 일이 발생할 때도  있었지만, 최신 JVM 구현체는 똑똑하게 일처리를 하기 때문에 (적어도 필자의 경험상으로는) 스레드  가 기아 상태가 될 가능성은 별로 없다."
+
+
+### D.5 추가 자료
+---
+
+**p.317** "[OCP Oracle Certified Professional Java SE 11 Developer Complete Study Guide (Sybex, 2020)](https://m.yes24.com/Goods/Detail/125723002)의 18장에서 스레드와 동시성을 설명한다."
+
+
+**p.317** "[기본기가 탄탄한 자바 개발자(제이펍, 2024)](https://product.kyobobook.co.kr/detail/S000213907278)에서 기본부터 성능 튜닝까지, 동시성을 충실하게 설명한다."
+
+
+**p.317** "[자바 병렬 프로그래밍(에이콘출판사, 2008)](https://product.kyobobook.co.kr/detail/S000000935083)은 오래된 책이지만 여전히 읽을 가치가 충분하다."
+
 
